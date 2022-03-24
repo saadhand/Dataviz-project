@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+
+<!-- head -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MSc Financial Markets & Technologies - Data visualization 2021</title>
+
+    <!-- bulma and font awesome -->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    
+    $('#graph-crime').load("crime.html");
+    $('#graph-earnings').load("earnings.html");
+    $('#graph-hpi').load("HPI_by_Country.html");
+    $('#graph-unemployment').load("Unemployment.html");
+    $('#graph-ptr-ratio').load("price-to-rent-ratio.html");
+    $('#graph-pte-region').load("PriceToEarningsRegion.html");
+    $('#graph-pte-borough').load("PriceToEarningsBorough.html");
+    $('#graph-prop-cost').load("PropertyCost.html");
+    $('#graph-eco-factors').load("economical-factors.html");
+    $('#graph-forecast').load("rental-forcaste.html");
+
+    });
+    </script>
+
+
+</head>
+
+<!-- body -->
+<body>
+
+  <!-- header -->
+  <section class="head">
+    <!-- todo: change assignment and name -->
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          E.H.O
+        </h1>
+        <h2 class="subtitle">
+          Equal Housing Opportunity: "The company that makes your dreams come home".
+        </h2>
+      </div>
+    </div>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img height="70px" width="50px" src="./image/logo.png"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#top">Introduction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#news">News</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#macro" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Macro Indicators
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#earnings">Earnings</a></li>
+                  <li><a class="dropdown-item" href="#crimes">Crimes</a></li>
+                  <li><a class="dropdown-item" href="#hpi">House Price Index</a></li>
+                  <li><a class="dropdown-item" href="#eco">Economical Facors</a></li>
+                  <li><a class="dropdown-item" href="#unemployment">Unemployment</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#financial-fundamentals" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Financial Fundamentals
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#pte-region">Price to Earning Region</a></li>
+                  <li><a class="dropdown-item" href="#pte-borough">Price to Earning Borough </a></li>
+                  <li><a class="dropdown-item" href="#price-to-rent">Price to Rent</a></li>
+                  <li><a class="dropdown-item" href="#snap">Snapshot</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Forecaste">Forecast</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+
+  </section>
+      
+
+  <section class="section">
+    <div class="container content">
+
+        <h2 id="top">Introduction</h2>
+        <p>
+        In recent times, <strong>London</strong> has emerged as one of the most popular places to invest in <strong>real estate</strong> . Foreign investors have also gained benefits from the massive rise of the properties’ prices. All in all, the properties in London offer numerous advantages for both locals and foreigners. In this website we are going to answer the following question: <strong>Should we invest in London?</strong>>
+        </p>
+
+
+        <h2 id="news">News</h2>
+        <div class="card-group">
+            <div class="card" style="width: 18rem;">
+                <img src="https://globalnews.ca/wp-content/uploads/2020/06/dpi11665690.jpg?quality=85&strip=all" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">London Real-Estate News</h5>
+                  <p class="card-text">The average house price in London continues to hold its record high in England set in July 2021 at £494,673 and will continue to exert significant upward pressure on UK property, particularly London.</p>
+                  <a href="https://globalnews.ca/news/7384023/buying-sellers-market-london-real-estate/" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.reuters.com/resizer/P9w5vtj9XXCuz-J8NGPAYn2Rlmo=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/MZHTHFZB3ZLVRLYM6I6GGTYV64.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Pandemic</h5>
+                  <p class="card-text">Due to the pandemic, people tend to seek out places in the suburbs to avoid crowds. If there is less demand for inner city properties, the value of those properties will also fall...</p>
+                  <a href="https://www.reuters.com/world/uk/uk-sees-surge-empty-shops-offices-amid-pandemic-rics-2021-01-28/" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.greaterlondonproperties.co.uk/wp-content/uploads/2020/08/brexit-london-property.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Brexit</h5>
+                  <p class="card-text">The Brexit process has produced an element of uncertainty which is hated by all markets. Volatility is occurring periodically in liquid investments such as shares and listed debt in the capital markets and in the value of the pound sterling...</p>
+                  <a href="https://www.greaterlondonproperties.co.uk/brexit-and-london-property/" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F0a2e43f6-6593-11e8-a39d-4df188287fff?fit=scale-down&source=next&width=700" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Oligarchs</h5>
+                  <p class="card-text">Russian oligarchs have taken London's high-end property market by storm. Now they're under pressure, and so is the city's real estate sector. The British government has all but told wealthy Russians...</p>
+                  <a href="https://www.businessinsider.com/real-estate-investing-analysis-russia-ukraine-putin-oligarchs-london-properties-2022-3?r=US&IR=T" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="http://www.hospitalityandcateringnews.com/wp-content/uploads/2016/01/Londons-tourism-continues-to-grow.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Tourism</h5>
+                  <p class="card-text">Rising house prices and private rents mean some workers are at risk of being squeezed out of rural and coastal life, leading to skills...</p>
+                  <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 id="macro">Macro indicators</h2>
+        <h3 id="earnings">Earnings</h3>
+        <div id="graph-earnings"></div>
+        <br>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EarningsModal">
+            Interpretation
+        </button>
+
+        <h3 id="crimes">Crimes</h3>
+        <div id="graph-crime"></div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#CrimeModal">
+            Interpretation
+        </button>
+
+        <h3 id="hpi">House Price Index</h3>
+        <div id="graph-hpi"></div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#HPIModal">
+            Interpretation
+        </button>
+
+        <h3 id="eco">Economical Facors</h3>
+        <div id="graph-eco-factors"></div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EcoModal">
+            Interpretation
+        </button>
+
+        <h3 id="unemployment">Unemployment</h3>
+        <div id="graph-unemployment"></div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#UnemploymentModal">
+            Interpretation
+        </button>
+
+        <!-- Financial Fondamentals-->
+
+        <h2 id="financial-fundamentals">Financial Fundamentals</h2>
+        <h3 id="pte-region">Price to Earnings Region</h3>
+        <div id="graph-pte-region"></div>
+        <br>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PricetoEarningRegionModal">
+            Interpretation
+        </button>
+
+        <h3 id="pte-borough">Price to Earnings Borough</h3>
+        <div id="graph-pte-borough"></div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PricetoEarningBoroughModal">
+            Interpretation
+        </button>
+
+        <h3 id="price-to-rent">Price to Rent Ratio</h3>
+        <div id="graph-ptr-ratio"></div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PricetoRentModal">
+            Interpretation
+        </button>
+
+        <h3 id="price-to-rent">Property Cost</h3>
+        <div id="graph-prop-cost"></div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PropertyCostModal">
+            Interpretation
+        </button>
+
+        <h3 id="snap">2021 Snapshot of the European real estate market</h3>
+        <img src="./image/snapshot.png">
+        <br><br>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SnapModal">
+            Interpretation
+        </button>
+
+        <!-- Forcaste-->
+
+        <h2 id="Forecaste">Forecast</h2>
+        <h3 id="pte-region">Rental Forecast</h3>
+        <div id="graph-forecast"></div>
+        <br>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ForecastModal">
+            Interpretation
+        </button>
+
+        <br><br><br>
+        <div>
+          <iframe height="400" width="1100" src="https://www.youtube.com/embed/Hvh5EynCiB0?autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <h3>Sources:</h3>
+        <div class="container">
+          <div class="row">
+              <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                  <img src="https://cdn.statcdn.com/static/img/openGraph/statista.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Statista</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                  <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">UK police data</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                  <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Office for National Statistics</h5>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        
+
+
+    </div>
+  </section>
+
+  <hr class="container">
+
+  <!-- about section -->
+  <!-- fill in, or link to a personal web page  -->
+  <section class="section">
+    <div class="container content">
+      <h2 id="about">
+        About us
+      </h2>
+
+      <div class="container my-4">
+
+      
+        <p>Click on each of the button below to learn more.</p>
+      
+        <a class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#SaadModal" role="button">Saad Handar <i class="fas fa-user"></i></a>
+        <a class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#JosselinModal" role="button">Jossselin Masse <i class="fas fa-user"></i></a>
+        <a class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#MohamedModal" role="button">Mohamed Touzi <i class="fas fa-user"></i></a>
+        <a class="btn btn-dark me-2" data-bs-toggle="modal" data-bs-target="#AmineModal" role="button">Amine Zahraoui <i class="fas fa-user"></i></a>
+
+
+      </div>
+    
+    <!-- Saad Modal -->
+    <div class="modal fade" id="SaadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Saad Handar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <div class="media">
+                <div class="media-left">
+                  <p class="image is-128x128">
+                    <!-- replace with your profile image -->
+                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQE14kf2nDtFtw/profile-displayphoto-shrink_800_800/0/1519059089703?e=1651708800&v=beta&t=EhEmh_eLYyx2Hy7rSZIaafr99ExJ8RkRsv5mj-pZ8wQ">
+                  </p>
+                </div>
+        
+                <div class="media-content">
+                    <p>
+                      <!-- replace with your information -->
+                      Saad is a graduated engineer from <strong>ESIGELEC</strong> and currently enrolled in the Master of Science Finance and Data Science at <strong>NEOMA Business School Paris</strong>, with a professional experience at <strong>Allianz France</strong> as <strong>Investment Quantitative Analyst</strong>.
+                      <br/>
+                      <p><strong>For more informations check the links below:</strong></p>
+                      <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
+                      <a href="https://github.com/saadhand/Neoma-Projects">
+                        <span class="fab fa-github"></span>
+                        <span>My Github</span>
+                      </a>
+                      &bullet;
+                      <a href="https://www.linkedin.com/in/saad-handar/">
+                        <span class="fab fa-linkedin"></span>
+                        <span>My LinkedIn</span>
+                      </a>
+                    </p>
+        
+                </div>
+              </div>
+
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Josselin Modal -->
+    <div class="modal fade" id="JosselinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Josselin Masse</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            
+              <div class="media">
+                <div class="media-left">
+                  <p class="image is-128x128">
+                    <!-- replace with your profile image -->
+                    <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHbpBcdpE3BkA/profile-displayphoto-shrink_400_400/0/1547896564140?e=1653523200&v=beta&t=CbMZlPY56xl-sQ0qWbQMHI8fujC3lk4e-C558bFVFDo">
+                  </p>
+                </div>
+        
+                <div class="media-content">
+                    <p>
+                      <!-- replace with your information -->
+                      Josselin is a student currently enrolled in the Master of Science Finance and Big Data at <strong>NEOMA Business School Paris</strong>,with a professional experience at <strong>Société Générale</strong> as <strong> Developer / Data Analyst in the Asset & Liabiliy Management department</strong>
+                      <br/>
+                      <p><strong>For more informations check the links below:</strong></p>
+                      <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
+                      &bullet;
+                      <a href="https://www.linkedin.com/in/josselin-mass%C3%A9-351ba4174/">
+                        <span class="fab fa-linkedin"></span>
+                        <span>My LinkedIn</span>
+                      </a>
+                    </p>
+        
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Mohamed Modal -->
+    <div class="modal fade" id="MohamedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Mohamed Touzi</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="media">
+                <div class="media-left">
+                  <p class="image is-128x128">
+                    <!-- replace with your profile image -->
+                    <img src="https://attachments.office.net/owa/saad.handar.21%40neoma-bs.com/service.svc/s/GetAttachmentThumbnail?id=AAMkAGJmMGRmMDYyLWNhNTQtNDkxOS1iN2Y4LWJjMjFhZmJjNzk0MQBGAAAAAABH%2F8s0BfXERJBB%2FPItFl%2FyBwDnaEorLh1wT79YyiQkafhwAAAAAAEMAADnaEorLh1wT79YyiQkafhwAACrsYj6AAABEgAQAGo972TYuiVAgXpLuBlcF4g%3D&thumbnailType=2&token=eyJhbGciOiJSUzI1NiIsImtpZCI6IkZBRDY1NDI2MkM2QUYyOTYxQUExRThDQUI3OEZGMUIyNzBFNzA3RTkiLCJ0eXAiOiJKV1QiLCJ4NXQiOiItdFpVSml4cThwWWFvZWpLdDRfeHNuRG5CLWsifQ.eyJvcmlnaW4iOiJodHRwczovL291dGxvb2sub2ZmaWNlLmNvbSIsInVjIjoiNzlmYjY3MjhiZDljNGU5N2JjNTNlYjQ2MmI3ZGJjOTYiLCJzaWduaW5fc3RhdGUiOiJbXCJrbXNpXCJdIiwidmVyIjoiRXhjaGFuZ2UuQ2FsbGJhY2suVjEiLCJhcHBjdHhzZW5kZXIiOiJPd2FEb3dubG9hZEBlYTg0N2IzMS1kYzczLTRlNjQtYjhlOS01NGNiMjM3Njg4ZjMiLCJpc3NyaW5nIjoiU0lQIiwiYXBwY3R4Ijoie1wibXNleGNocHJvdFwiOlwib3dhXCIsXCJwdWlkXCI6XCIxMTUzODAxMTE5NzI1NTI3MTE5XCIsXCJzY29wZVwiOlwiT3dhRG93bmxvYWRcIixcIm9pZFwiOlwiMGQ5OGQzM2QtYzljZi00ZGM5LTlmYjAtYmU3NWFmZDFlNzIyXCIsXCJwcmltYXJ5c2lkXCI6XCJTLTEtNS0yMS0yMjYyNjA2NDc3LTgzMzI5OTAxOS0yODU0NTM0MzU1LTI3MDA4MTMyXCJ9IiwibmJmIjoxNjQ4MTExOTc5LCJleHAiOjE2NDgxMTI1NzksImlzcyI6IjAwMDAwMDAyLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMEBlYTg0N2IzMS1kYzczLTRlNjQtYjhlOS01NGNiMjM3Njg4ZjMiLCJhdWQiOiIwMDAwMDAwMi0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvYXR0YWNobWVudHMub2ZmaWNlLm5ldEBlYTg0N2IzMS1kYzczLTRlNjQtYjhlOS01NGNiMjM3Njg4ZjMiLCJoYXBwIjoib3dhIn0.opo_dK3FW1n5jugpbf6zyvBdsPFErQwDWKBfj4CVy91ioX3qoMH4xZ_UwL-b8isXRdl_YfeUgr2msfoACS_QyA6KaKaHzz_pXLEajTpO5auJOb0ucmlJCIktO9khIRxt5V968BtcPFAX-uhDifpls7rGDlq-s-mRbZPvmNhuOu5_pMlConS5yltxiXUU7bmmle5XFfzGnKj2y4NcYVkzhL38fzO6B6MLJyFhS9OLd5WDsGrGLtssCcHHEwDP6dEjECjRJeWz-sTH5OjCgMpJBvbeKyNdXcZAWwrc3W9Kpm5ofxd6cWgjZflSWffItoBdjRKGT1tLMfd4caj5a96hLA&X-OWA-CANARY=tZDEughglUmUmeLPqYpoPOBTIWd0DdoYeImb9N1TBkgl674FQi3bxnppK44lPogtdnSoSQxMRxM.&owa=outlook.office.com&scriptVer=20220318002.05&animation=true">
+                  </p>
+                </div>
+        
+                <div class="media-content">
+                    <p>
+                      <!-- replace with your information -->
+                      Mohamed is an Assistant <strong>Investment Specialist</strong> in the Environmental Strategies Group having joined <strong>BNP AM in 2020</strong>. Mohamed worked for BPE, the private bank of ‘La Banque Postale as a Portfolio Manager assistant. He helped the team build optimised portfolios and research new funds to analyse and benchmark. Prior to this, Mohamed was a Sales Trader Assistant at Attijariwafa Bank and in 2019 a Financial Consultant Assistant at DBS. Mohamed holds a Master Degree in Financial Markets from ESG Finance school and is currently undertaking his Master of Science <strong>MSc Finance & Big Data at Neoma Business School</strong>.
+                      <br/>
+                      <p><strong>For more informations check the links below:</strong></p>
+                      &bullet;
+                      <a href="https://www.linkedin.com/in/mohamed-touzi-03ab96178/">
+                        <span class="fab fa-linkedin"></span>
+                        <span>My LinkedIn</span>
+                      </a>
+                    </p>
+        
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Amine Modal -->
+    <div class="modal fade" id="AmineModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Amine Zahraoui</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+              <div class="media">
+                <div class="media-left">
+                  <p class="image is-128x128">
+                    <!-- replace with your profile image -->
+                    <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHQkcOgFWRRKA/profile-displayphoto-shrink_800_800/0/1632751914269?e=1653523200&v=beta&t=3xApOoiVIesgdYT-1TZjQn8paBtfqBujWUC4ht_G250">
+                  </p>
+                </div>
+        
+                <div class="media-content">
+                    <p>
+                      <!-- replace with your information -->
+                      Amine is a student currently enrolled in the Master of Science Finance and Big Data at <strong>NEOMA Business School Paris</strong>,with a professional experience at <strong>Société Générale</strong> as <strong> Risk reporting officer at Enterprise Risk Management department</strong>
+                      <br/>
+                      <p><strong>For more informations check the links below:</strong></p>
+                      <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
+                      &bullet;
+                      <a href="https://www.linkedin.com/in/amine-z-23052b142/">
+                        <span class="fab fa-linkedin"></span>
+                        <span>My LinkedIn</span>
+                      </a>
+                    </p>
+        
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <small>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span>Back to Top</span>
+        </a>
+        <br/>
+        <a href="https://www.neoma-bs.fr/formations/masteres-specialises-masters-of-science-plein-temps/msc-in-risk-and-financial-technologies/presentation-du-programme">MSc Financial Markets & Technologies / Data visualization</a>
+        &bullet;
+        <a href="https://https://www.neoma-bs.fr/">Neoma Business School</a>
+      </small>
+    </div>
+  </footer>
+
+  <!--Earnings Modal -->
+  <div class="modal fade" id="EarningsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Earnings Interpretation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>We notice that the highest wages are located in central and southwest London. In first place, we find <strong>Kensington and Chelsea</strong> followed by <strong>Wandsworth</strong>. This can give us an idea of the real estate prices and the social class of the residents. We can assume that the people who earn the most will have the best investment decisions so investing in these neighbourhoods would be a good choice, is this the case?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--Crimes Modal -->
+    <div class="modal fade" id="CrimeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Crimes Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Compared to what we saw in the first graph, we notice that the highest number of crimes is found in the poorest neighbourhoods. It may affect that these are dangerous places where people do not prefer to invest.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--HPI Modal -->
+    <div class="modal fade" id="HPIModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">HPI Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              This graph shows the variation of the HPI in England and the UK interest and inflation rate. 
+              The HPI kept going up from 2012 to 2021 whereas the inflation and interest rates kept fluctuating in this period which means that the England HPI is not impacted by the rates’ movements.
+            <p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Eco Modal -->
+    <div class="modal fade" id="EcoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Economical Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              This graph shows the evolution of the House Price Index by European countries from <strong>2011 to 2021</strong>. 
+              We see that in 2012, all the HPIs were quite at the same level and it started diverging by years. 
+              Comparing the HPI of England to the other countries, we can say it stayed quite at the same level <strong>(between 85 and 120)</strong> by a small increase in this last 10 years which means that the UK sector is stable comparing to the other countries with a bullish trend.
+            <p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Unemployment Modal -->
+    <div class="modal fade" id="UnemploymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Unemployment Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              <strong> Unemployment </strong>in the <strong>UK region</strong> is <strong>quite high at the beginning of the period</strong> and even higher in the City of London. Indeed, in <strong>2011</strong>, unemployment was around <strong>10% for the City of London</strong>, while the <strong>rest of the UK averaged around 8%</strong>. <strong>Over time</strong>, although unemployment levels are falling significantly,<strong> London remains a city with higher than average unemployment</strong>.
+              <p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Price to Earning Region Modal -->
+    <div class="modal fade" id="PricetoEarningRegionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Price to Earning Regional ratio Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p> <strong>Three groups of regions</strong> can be clearly distinguished which follow more or less the same trend. In the first position, we notice that <strong>London has a very high Price to Earnings</strong>. The increase of this ratio is also very important in this region. <strong>This is not necessarily a good investment signal</strong>. As far as the others are concerned, we note a slight increase in the ratio between 2008 and 2020. <strong>Only the North East region seems to have had an increase in income compared to the price of real estate</strong>.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Price to Earning Borough Modal -->
+    <div class="modal fade" id="PricetoEarningBoroughModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Price to Earning Borough ratio Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p> Within the London area itself, it is quickly apparent that values were <strong>already at 10 in 2008</strong>. This means that in order to buy a property, one had to <strong>invest 10 times the annual income received</strong>, which is very important. We can also see immediately that even in 2008, <strong>the central London</strong> areas were reaching very <strong>high levels</strong>. Finally, over time, <strong>between 2008 and 2020</strong>, all areas have seen a significant increase in property prices. Indeed, <strong>the ratios doubled on average</strong> to reach levels of 30 for Kensington and Chelsea.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Price to rent Modal -->
+    <div class="modal fade" id="PricetoRentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Price to Rent ratio Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Over time, the <strong> price to rent ratio </strong> has increased too much. It was more interesting before buying, but our price to rent ratio has been <strong>too high since 2012</strong>. Now, with the latest data we have at the end of 2019, the Price to Rent Ratio of the different neighbourhoods is <strong>above 21</strong>, which recommends us to rent, much better than to buy. We can assume that the market is <strong>overvalued</strong>.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Property Cost Modal -->
+    <div class="modal fade" id="PropertyCostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Property Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              The <strong>upward trend </strong>is very clear in this graph. The IPRHP has increased across England. We can also see that although <strong>London</strong> is not the region with the highest index, it is still the region that has had the <strong>largest increase in its Index of Private Rental Housing Price</strong>.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Snapshot Modal -->
+    <div class="modal fade" id="SnapModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Snapshot Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>In this table, we have tried to compare the UK with <strong> 15 other European based countries</strong>. We note that for all the indicators we are trying to present, <strong>UK is in the average range</strong>. So there is not much of a stake in investing there.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Snapshot Modal -->
+    <div class="modal fade" id="ForecastModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Forecast Interpretation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>This chart shows the Annual Cumulative Price Change Rate Forecast of rentals in London from <strong> 2020 to 2024</strong>. For an investment in 2020, there will be a <strong>15.5% increase</strong> in rental prices. Conclusion, we are in front of a great opportunity, but it is now!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+</body>
+</html>
